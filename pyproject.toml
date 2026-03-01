@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vaultkey"
+version = "0.1.0"
+description = "Self-hosted secrets and credential manager"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "shaeelbhatti2", email = "shaeelbhatti2@gmail.com" }]
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "sqlalchemy[asyncio]>=2.0.30",
+    "asyncpg>=0.29.0",
+    "alembic>=1.13.0",
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+    "cryptography>=42.0.0",
+    "argon2-cffi>=23.1.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[argon2]>=1.7.4",
+    "httpx>=0.27.0",
+    "redis>=5.0.0",
+    "arq>=0.26.0",
+    "jinja2>=3.1.4",
+    "python-multipart>=0.0.9",
+    "authlib>=1.3.0",
+    "itsdangerous>=2.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.4.0",
+    "mypy>=0.4.0",
+    "testcontainers>=4.4.0",
+    "aiosqlite>=0.20.0",
+]
+
+[project.scripts]
+vaultkey = "vaultkey.cli.main:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["vaultkey"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
