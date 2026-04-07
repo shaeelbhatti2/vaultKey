@@ -47,10 +47,12 @@ def get_container() -> AppContainer:
 
 
 def create_app() -> FastAPI:
+    from vaultkey.api.etag import ETagMiddleware
     from vaultkey.api.routes.secrets import router as secrets_router
 
     app = FastAPI(title="VaultKey", version="0.1.0", lifespan=lifespan)
     app.state.container = get_container()
+    app.add_middleware(ETagMiddleware)
     app.include_router(secrets_router)
 
     @app.get("/health")
