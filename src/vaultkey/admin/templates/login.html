@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Login · VaultKey{% endblock %}
+{% block content %}
+<section class="card narrow">
+  <h1>Sign in</h1>
+  <form method="post" action="/admin/login">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label>Email<input type="email" name="email" required autocomplete="username"></label>
+    <label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+    <button type="submit">Login</button>
+  </form>
+</section>
+{% endblock %}
