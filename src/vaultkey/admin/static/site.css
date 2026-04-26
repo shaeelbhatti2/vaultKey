@@ -1,0 +1,14 @@
+body { font-family: system-ui, sans-serif; margin: 0; background: #0f1419; color: #e7ecf3; }
+.topbar { display: flex; justify-content: space-between; padding: 1rem 1.5rem; background: #151b23; border-bottom: 1px solid #243041; }
+.topbar a { color: #9ecbff; text-decoration: none; margin-right: 1rem; }
+.brand { font-weight: 700; color: #fff !important; }
+.container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+.card { background: #151b23; border: 1px solid #243041; border-radius: 12px; padding: 1.5rem; }
+.narrow { max-width: 420px; margin: 4rem auto; }
+label { display: block; margin-bottom: 1rem; }
+input, button { width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid #243041; background: #0f1419; color: inherit; }
+button { background: #2563eb; border: none; cursor: pointer; margin-top: 0.5rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.stat { font-size: 2rem; font-weight: 700; }
+.tree ul { list-style: none; padding-left: 1rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; background: #334155; font-size: 0.8rem; }

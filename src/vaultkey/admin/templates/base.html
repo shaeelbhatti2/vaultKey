@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}VaultKey Admin{% endblock %}</title>
+  <link rel="stylesheet" href="/admin/static/site.css">
+  <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="/admin/dashboard" class="brand">VaultKey</a>
+    <nav>
+      <a href="/admin/secrets">Secrets</a>
+      <a href="/admin/users">Users</a>
+      <a href="/admin/audit">Audit</a>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
