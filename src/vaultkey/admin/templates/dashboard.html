@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · VaultKey{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+<div class="grid">
+  <section class="card"><div class="stat">{{ secret_count }}</div><div>Active secrets</div></section>
+  <section class="card"><div class="stat">{{ recent_access }}</div><div>Reads last 7 days</div></section>
+  <section class="card"><div class="stat">{{ expiring_secrets }}</div><div>Expiring within 30 days</div></section>
+</div>
+{% endblock %}
