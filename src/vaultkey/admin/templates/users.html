@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Users · VaultKey{% endblock %}
+{% block content %}
+<h1>Users and roles</h1>
+<section class="card">
+  <h2>Members</h2>
+  <ul>
+  {% for m in memberships %}
+    <li>{{ m.user_id }} · {{ m.role }}</li>
+  {% endfor %}
+  </ul>
+</section>
+<section class="card">
+  <h2>Access policies</h2>
+  <ul>
+  {% for p in policies %}
+    <li>{{ p.name }} · {{ p.path_prefix }} · read={{ p.can_read }} write={{ p.can_write }}</li>
+  {% endfor %}
+  </ul>
+</section>
+{% endblock %}
